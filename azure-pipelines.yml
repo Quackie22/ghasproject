@@ -1,0 +1,13 @@
+trigger:
+  - dev/main
+pr: none
+# 2. Conectamos tu repositorio de infraestructura/gobernanza de Azure 2026 Junio 18 . ...
+resources:
+  repositories:
+    - repository: repo-gobernanza
+      type: git
+      name: azure-voting-app # Tu repositorio en Azure DevOps
+
+# 3. Llamamos de forma segura a tu archivo centralizado
+jobs:
+  - template: github-trigger.yml@repo-gobernanza
